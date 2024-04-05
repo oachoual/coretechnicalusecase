@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <template lwc:if={movie.data}>
+            <p>Title: {name}</p>
+            <p>Category: {category}</p>
+            <p>Release Date: {releaseDate}</p>
+            <ul>
+                <template for:each={actors} for:item="actor">
+                    <li key={actor}>{actor}</li>
+                </template>
+            </ul>
+        </template>
+        <template lwc:if={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>

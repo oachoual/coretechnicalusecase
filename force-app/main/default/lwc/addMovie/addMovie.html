@@ -1,0 +1,45 @@
+<template>
+    <lightning-card>
+        <template lwc:if={categories}>
+            <!-- <template for:each={categories.data.values} for:item="pcklstval">
+                <p key={pcklstval.value}>{pcklstval.label}</p>
+            </template> -->
+            <lightning-input 
+                type="text" 
+                label="Movie Name" 
+                onchange={handleNameChange} value={movieName}>
+            </lightning-input>
+            <lightning-input 
+                type="date" 
+                label="Release Date" 
+                onchange={handleDateChange} value={releaseDate}>
+            </lightning-input>
+            <lightning-combobox
+            name="category"
+            label="Category"
+            value={category}
+            placeholder="Select Category"
+            options={categories}
+            onchange={handleCategoryChange} ></lightning-combobox>
+        </template>
+        <template lwc:if={actors}>
+            <template iterator:it={selectedActorControls}>
+                <c-actor-select 
+                key={it.value.index} 
+                index={it.value.index}
+                isnew={it.last}
+                select-val={it.value.value}
+                actorlist={actors} 
+                onactoradd={handleActorAdd} 
+                onactordelete={handleActorDelete}
+                onactorselect={handleActorSelect}>
+            </c-actor-select>
+            </template>
+        </template>
+        <lightning-button 
+            label="Add Movie" 
+            title="Add Movie"
+            onclick={handleSubmit}>
+        </lightning-button>
+    </lightning-card>
+</template>

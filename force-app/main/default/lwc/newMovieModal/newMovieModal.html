@@ -1,0 +1,15 @@
+<template>
+    <template lwc:if={actors}>
+        <template iterator:it={selectedActorControls}>
+            <c-actor-select 
+            key={it.value.index} 
+            index={it.value.index}
+            isnew={it.last} 
+            actorlist={actors} 
+            onactoradd={handleActorAdd} 
+            onactordelete={handleActorDelete}
+            onactorselect={handleActorSelect}>
+        </c-actor-select>
+        </template>
+    </template>
+</template>

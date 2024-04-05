@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <c-filter-movies onfilterchange={handleFilterChange}></c-filter-movies>
+        <template lwc:if={movies.data}>
+            <div class="slds-grid slds-gutters">
+                <template for:each={movies.data} for:item="movie">
+                    <div class="slds-col" key={movie.Id}>
+                       <c-movie-tile movie={movie} onmovieselect={handleMovieSelect}></c-movie-tile>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <lightning-button label="New Movie" onclick={openModal}></lightning-button>
+    </lightning-card>
+</template>

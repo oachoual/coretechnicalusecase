@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-grid slds-grid_vertical-align-end">
+        <div class="slds-col">
+            <lightning-select
+            value={selectVal}
+            label="Select an Actor"
+            options={actorlist}
+            onchange={handleChange}
+            message-when-value-missing="Which area can we help you with?">
+            </lightning-select>
+        </div>
+        <div class="slds-col">
+            <template lwc:if={isnew}>
+                <lightning-button label="+" onclick={handleAdd} disabled={pristine}></lightning-button>
+            </template>
+            <template lwc:else>
+                <lightning-button label="-" onclick={handleDelete}></lightning-button>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,18 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Actor__c",
+                "referenceId": "Actor__cRef1"
+            },
+            "Name": "Brad Pitt"
+        },
+        {
+            "attributes": {
+                "type": "Actor__c",
+                "referenceId": "Actor__cRef2"
+            },
+            "Name": "Tom Cruise"
+        }
+    ]
+}
